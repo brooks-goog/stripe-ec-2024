@@ -1,0 +1,16 @@
+{
+    "name": "rent-payment-functions",
+    "version": "1.0.0",
+    "main": "index.js",
+    "engines": {
+      "node": "16" 
+    },
+    "scripts": {
+      "start": "gcloud functions deploy createPaymentIntent --source . --trigger-http --runtime nodejs16 && gcloud functions deploy handleStripeWebhook --source . --trigger-http --runtime nodejs16"
+    },
+    "dependencies": {
+      "@google-cloud/functions-framework": "^3.0.0",
+      "@google-cloud/secret-manager": "^5.0.1",
+      "stripe": "^14.0.0"
+    }
+  }
